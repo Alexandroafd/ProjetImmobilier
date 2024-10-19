@@ -27,6 +27,9 @@ class PropertyFactory extends Factory
             'price' => $this->faker->numberBetween(100000, 1000000),
             'city' => $this->faker->city,
             'address' => $this->faker->address,
+            'state' => $this->faker->city,
+            'type' => $this->faker->word(),
+            'status' => $this->faker->randomElement(['sell', 'rent']),
             'postal_code' => $this->faker->postcode,
             //'image' => $this->faker->image(200,100,300),
             'sold' => false

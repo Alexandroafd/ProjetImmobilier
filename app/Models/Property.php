@@ -24,13 +24,21 @@ class Property extends Model
         'city',
         'postal_code',
         'sold',
-        'image'
+        'images',
+        'type',
+        'status',
+        'state'
     ];
 
-    public function options(): BelongsToMany
+    public function options()
+    {
+        return $this->belongsToMany(Option::class, 'option_property');
+    }
+
+    /*public function options(): BelongsToMany
     {
         return $this->belongsToMany(Option::class);
-    }
+    }*/
 
     public function getSlug()
     {

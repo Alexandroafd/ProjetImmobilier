@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index() 
     {
-        $properties = Property::whereNotNull('image')->available()->orderBy('created_at', 'desc')->limit(16)->get();
+        $properties = Property::whereNotNull('images')->available()->orderBy('created_at', 'desc')->limit(6)->get();
         return view('home', [
             'properties' => $properties
         ]);

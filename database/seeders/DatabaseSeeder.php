@@ -23,9 +23,9 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        User::factory()->create([
-            'email' => 'john@doe.fr'
-        ]);
+        //User::factory()->create([
+        //    'email' => 'john@doe.fr'
+        //]);
         $options = Option::factory(10)->create();
         Property::factory(50)
         ->hasAttached($options->random(3))
