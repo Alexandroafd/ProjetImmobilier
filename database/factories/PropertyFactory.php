@@ -31,7 +31,6 @@ class PropertyFactory extends Factory
             'type' => $this->faker->word(),
             'status' => $this->faker->randomElement(['sell', 'rent']),
             'postal_code' => $this->faker->postcode,
-            //'image' => $this->faker->image(200,100,300),
             'sold' => false
         ];
     }

@@ -6,8 +6,12 @@ use App\Http\Requests\PropertyContactRequest;
 use App\Http\Requests\SearchPropertiesRequest;
 use App\Mail\PropertyContactMail;
 use App\Models\Property;
+use App\Models\User;
+use App\Models\Agent;
+use App\Models\Agency;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 
 class PropertyController extends Controller
 {
@@ -76,4 +80,35 @@ class PropertyController extends Controller
             'input' => $request->validated()
         ]);
    }
+
+   public function listAgent()
+    {
+        return view('pages.listAgent');
+    } 
+ 
+    public function singleAgent($user_id)
+    {
+        $user = User::find($user_id);
+        dd($user);
+        $agent = $user->agent;
+
+        if(!$agent)
+        {
+            return redirect()->back()->with('error', 'Cet utilisateur n\'a pas d\'agent associé.');
+        }
+
+        return view('pages.singleAgent', 
+            compact('user', 'agent')
+        );
+    } 
+
+    public function listAgency()
+    {
+        return view('pages.listAgency');
+    } 
+
+    public function singleAgency()
+    {
+        return view('pages.singleAgency');
+    } 
 }

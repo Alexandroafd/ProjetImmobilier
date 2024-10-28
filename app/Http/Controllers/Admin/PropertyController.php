@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class PropertyController extends Controller
+class PropertyController extends Controller 
 {
     /**
      * Display a listing of the resource.
@@ -322,28 +322,27 @@ class PropertyController extends Controller
     }
 
     public function updateProfile(Request $request)
-{
-    $request->validate([
-        'profile_pic' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-    ]);
+    {
+        $request->validate([
+            'profile_pic' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
 
-    $user = auth()->user();
+        $user = auth()->user();
 
-    if ($request->hasFile('profile_pic')) {
-        if ($user->profile_pic) {
-            Storage::delete('public/profile_pics/' . $user->profile_pic);
+        if ($request->hasFile('profile_pic')) {
+            if ($user->profile_pic) {
+                Storage::delete('public/profile_pics/' . $user->profile_pic);
+            }
+
+            $file = $request->file('profile_pic');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/profile_pics', $filename);
+
+            $user->profile_pic = $filename;
         }
+        $user->save();
 
-        $file = $request->file('profile_pic');
-        $filename = time() . '.' . $file->getClientOriginalExtension();
-        $file->storeAs('public/profile_pics', $filename);
-
-        $user->profile_pic = $filename;
+        return redirect()->back()->with('success', 'Photo de profil mise à jour avec succès!');
     }
-
-    $user->save();
-
-    return redirect()->back()->with('success', 'Photo de profil mise à jour avec succès!');
-}
 
 }

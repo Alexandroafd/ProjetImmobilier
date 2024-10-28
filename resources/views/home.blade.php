@@ -2,73 +2,46 @@
 
 @section('content')
 
-    		<!-- ============================ Hero Banner  Start================================== -->
-			<div class="image-cover hero-banner bg-primary" style="background:url({{asset('assets/img/banner-6.png')}}) no-repeat;">
-				<!--<div class="container">
-					<div class="hero-search-wrap">
-						<div class="hero-search-2">
-							<h2 class="text-light mb-4">Chercher la maison de vos reves.</h2>
-						</div>
-                        <form method="post" action="">
-                            <div class="hero-search-content side-form">
-							
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="form-group">
-                                            <div class="input-with-icon">
-                                                <label>Nom</label>
-                                                <input type="text" id="title" name="title" class="form-control" placeholder="Mot clef">
-                                                <img src="{{--asset('assets/img/pin.svg')--}}" width="18" alt="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="form-group">
-                                            <label>Prix</label>
-                                            <input type="number" id="price" name="price" class="form-control" placeholder="Prix">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="form-group">
-                                            <label>Surface</label>
-                                            <input type="number" id="surface" name="surface" class="form-control" placeholder="Surface">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <div class="form-group">
-                                            <label>Nombre de chambres</label>
-                                            <input type="number" id="rooms" name="rooms" class="form-control" placeholder="Chambre">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <div class="hero-search-action">
-                                <button type="submit" class="btn full-width btn-primary">Rechercher</button>
-                            </div>
-                        </form>
-					</div>
-				</div>-->
-                <div class="container">
-					<div class="simple-search-wrap">
-						<div class="hero-search-2">
-                            <p class="lead-i text-light">Find Hot & Trending Property</p>
-							<h2 class="text-light mb-4">Chercher la maison de vos reves.</h2>
-							<!--<div class="full-search-2 eclip-search italian-search hero-search-radius shadow-hard mt-5">
+            <!-- ============================ Hero Banner  Start================================== -->
+			<div class="image-bottom hero-banner" style="background:#2540a2 url(assets/img/new-banner.jpg) no-repeat;" data-overlay="7">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-9 col-md-11 col-sm-12">
+							<div class="inner-banner-text text-center">
+								<p class="lead-i">Amet consectetur adipisicing <span class="badge badge-success">New</span></p>
+								<h2><span class="font-normal">Trouver la maison</span> qui vous convient.</h2>
+							</div>
+							{{--<div class="full-search-2 eclip-search italian-search hero-search-radius shadow-hard mt-5">
 								<div class="hero-search-content">
 									<div class="row">
-										
-										<div class="col-lg-9 col-md-9 col-sm-12 elio">
+
+										<div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 b-r">
 											<div class="form-group">
+												<div class="choose-propert-type">
+													<ul>
+														<li>
+															<div class="form-check">
+																<input class="form-check-input" type="radio" id="typbuy" name="typeprt">
+																<label class="form-check-label" for="typbuy">
+																	For Buy
+																</label>
+															</div>
+														</li>
+														<li>
+															<div class="form-check">
+																<input class="form-check-input" type="radio" id="typrent" name="typeprt" checked>
+																<label class="form-check-label" for="typrent">
+																	For Rent
+																</label>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-xl-6 col-lg-6 col-md-4 col-sm-10 p-md-0 elio">
+											<div class="form-group border-start borders">
 												<div class="position-relative">
 													<input type="text" class="form-control border-0 ps-5" placeholder="Search for a location">
 													<div class="position-absolute top-50 start-0 translate-middle-y ms-2">
@@ -82,35 +55,161 @@
 												</div>
 											</div>
 										</div>
-										
-										<div class="col-lg-3 col-md-3 col-sm-12">
+
+										<div class="col-xl-1 col-lg-1 col-md-1 col-sm-2">
+											<div class="form-group">
+												<a class="collapsed ad-search" data-bs-toggle="collapse" data-bs-parent="#search" data-bs-target="#advance-search" href="javascript:void(0);" aria-expanded="false" aria-controls="advance-search"><i class="fa fa-sliders-h"></i></a>
+											</div>
+										</div>
+
+										<div class="col-xl-2 col-lg-2 col-md-3 col-sm-12">
 											<div class="form-group">
 												<button type="button" class="btn btn-dark full-width">Search</button>
 											</div>
 										</div>
-												
+
+									</div>
+									<!-- Collapse Advance Search Form -->
+									<div class="collapse" id="advance-search" aria-expanded="false" role="banner">
+
+										<!-- row -->
+										<div class="row">
+
+											<div class="col-lg-4 col-md-4 col-sm-12">
+												<div class="form-group mb-2">
+													<div class="input-with-icon">
+														<select id="town" class="form-control">
+															<option value="">&nbsp;</option>
+															<option value="1">Any Town</option>
+															<option value="2">Toronto</option>
+															<option value="3">Montreal</option>
+															<option value="4">Alberta</option>
+															<option value="5">Ontario</option>
+															<option value="6">Ottawa</option>
+														</select>
+														<i class="fa-solid fa-location-dot"></i>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-lg-4 col-md-4 col-sm-12">
+												<div class="form-group mb-2">
+													<div class="input-with-icon">
+														<select id="bedrooms" class="form-control">
+															<option value="">&nbsp;</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+														</select>
+														<i class="fas fa-bed"></i>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-lg-4 col-md-4 col-sm-12">
+												<div class="form-group mb-2">
+													<div class="input-with-icon">
+														<select id="bathrooms" class="form-control">
+															<option value="">&nbsp;</option>
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+														</select>
+														<i class="fas fa-bath"></i>
+													</div>
+												</div>
+											</div>
+
+										</div>
+										<!-- /row -->
+
+										<!-- row -->
+										<div class="row">
+
+											<div class="col-lg-12 col-md-12 col-sm-12 mt-3">
+												<h4 class="text-dark">Amenities & Features</h4>
+												<ul class="no-ul-list third-row">
+													<li>
+														<input id="a-1" class="form-check-input" name="a-1" type="checkbox">
+														<label for="a-1" class="form-check-label">Air Condition</label>
+													</li>
+													<li>
+														<input id="a-2" class="form-check-input" name="a-2" type="checkbox">
+														<label for="a-2" class="form-check-label">Bedding</label>
+													</li>
+													<li>
+														<input id="a-3" class="form-check-input" name="a-3" type="checkbox">
+														<label for="a-3" class="form-check-label">Heating</label>
+													</li>
+													<li>
+														<input id="a-4" class="form-check-input" name="a-4" type="checkbox">
+														<label for="a-4" class="form-check-label">Internet</label>
+													</li>
+													<li>
+														<input id="a-5" class="form-check-input" name="a-5" type="checkbox">
+														<label for="a-5" class="form-check-label">Microwave</label>
+													</li>
+													<li>
+														<input id="a-6" class="form-check-input" name="a-6" type="checkbox">
+														<label for="a-6" class="form-check-label">Smoking Allow</label>
+													</li>
+													<li>
+														<input id="a-7" class="form-check-input" name="a-7" type="checkbox">
+														<label for="a-7" class="form-check-label">Terrace</label>
+													</li>
+													<li>
+														<input id="a-8" class="form-check-input" name="a-8" type="checkbox">
+														<label for="a-8" class="form-check-label">Balcony</label>
+													</li>
+													<li>
+														<input id="a-9" class="form-check-input" name="a-9" type="checkbox">
+														<label for="a-9" class="form-check-label">Icon</label>
+													</li>
+													<li>
+														<input id="a-10" class="form-check-input" name="a-10" type="checkbox">
+														<label for="a-10" class="form-check-label">Wi-Fi</label>
+													</li>
+													<li>
+														<input id="a-11" class="form-check-input" name="a-11" type="checkbox">
+														<label for="a-11" class="form-check-label">Beach</label>
+													</li>
+													<li>
+														<input id="a-12" class="form-check-input" name="a-12" type="checkbox">
+														<label for="a-12" class="form-check-label">Parking</label>
+													</li>
+												</ul>
+											</div>
+
+										</div>
+										<!-- /row -->
+
 									</div>
 								</div>
-							</div>-->
+							</div>--}}
+
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- ============================ Hero Banner End ================================== -->
-			
+			<!-- ==================================== Hero Banner End ======================================== -->
+
 			<!-- ============================ Step How To Use Start ================================== -->
 			<section>
 				<div class="container">
-					
+
 					<div class="row justify-content-center">
 						<div class="col-xl-6 col-lg-7 col-md-10 text-center">
 							<div class="sec-heading center">
 								<h2>Comment ça marche?</h2>
-								<p>Acheter ou louer une Résidence en suivant ces trois étapes...</p>
+								<p>Acheter ou louer une Maison rapidement en trois étapes...</p>
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="row justify-content-center g-4">
 						<div class="col-lg-4 col-md-4">
 							<div class="middle-icon-features-item">
@@ -130,7 +229,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-lg-4 col-md-4">
 							<div class="middle-icon-features-item">
 								<div class="icon-features-wrap">
@@ -146,12 +245,12 @@
 									</div>
 								</div>
 								<div class="middle-icon-features-content">
-									<h4>Discuter avec votre Agent</h4>
-									<p>L'agent joue le role,d'intermédiaire entre le propriétaire et vous afin de vous proposer les meilleures options et de faciliter l'achat plus rapidement.</p>
+									<h4>Trouver un Agent</h4>
+									<p>L'agent joue le role d'intermédiaire entre le propriétaire et vous afin de vous proposer les meilleures options et de faciliter l'achat plus rapidement.</p>
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-lg-4 col-md-4">
 							<div class="middle-icon-features-item remove">
 								<div class="icon-features-wrap">
@@ -171,33 +270,33 @@
 							</div>
 						</div>
 					</div>
-					
+
 				</div>
 			</section>
 			<div class="clearfix"></div>
 			<!-- ============================ Step How To Use End ====================== -->
-			
-			
+
+
 			<!-- ========================= Explore Property ========================== -->
 			<section class="bg-light">
 				<div class="container">
-					
+
 					<div class="row justify-content-center">
 						<div class="col-xl-6 col-lg-7 col-md-10 text-center">
 							<div class="sec-heading center">
 								<h2>Récentes Propriétés</h2>
-								<p>Les nouvelles propriétés qui sont en vedette !</p>
+								<p>Nouvelles propriétés en vedette !</p>
 							</div>
 						</div>
 					</div>
-					
+
 				    <div class="row justify-content-center g-4">
 						@if ($properties->isNotEmpty())
                             @foreach ($properties as $property)
                                 <!-- Single Property -->
                                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                                     <div class="property-listing card border-0 rounded-3">
-                                        
+
                                         <div class="listing-img-wrapper p-3">
                                             <div class="list-img-slide position-relative">
                                                 <div class="position-absolute top-0 left-0 ms-3 mt-3 z-1">
@@ -207,7 +306,12 @@
                                                                 <path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="currentColor"></path>
                                                                 <path d="M14.854 11.321C14.7568 11.2282 14.6388 11.1818 14.4998 11.1818H14.3333V10.2272C14.3333 9.61741 14.1041 9.09378 13.6458 8.65628C13.1875 8.21876 12.639 8 12 8C11.361 8 10.8124 8.21876 10.3541 8.65626C9.89574 9.09378 9.66663 9.61739 9.66663 10.2272V11.1818H9.49999C9.36115 11.1818 9.24306 11.2282 9.14583 11.321C9.0486 11.4138 9 11.5265 9 11.6591V14.5227C9 14.6553 9.04862 14.768 9.14583 14.8609C9.24306 14.9536 9.36115 15 9.49999 15H14.5C14.6389 15 14.7569 14.9536 14.8542 14.8609C14.9513 14.768 15 14.6553 15 14.5227V11.6591C15.0001 11.5265 14.9513 11.4138 14.854 11.321ZM13.3333 11.1818H10.6666V10.2272C10.6666 9.87594 10.7969 9.57597 11.0573 9.32743C11.3177 9.07886 11.6319 8.9546 12 8.9546C12.3681 8.9546 12.6823 9.07884 12.9427 9.32743C13.2031 9.57595 13.3333 9.87594 13.3333 10.2272V11.1818Z" fill="currentColor"></path>
                                                             </svg>
-                                                        </span>Verified
+                                                        </span>
+                                                        @if ($property->sold == 0)
+                                                            Disponible
+                                                        @else
+                                                            Non Disponible
+                                                        @endif
                                                     </div>
                                                 </div>
                                                 <div class="click rounded-3 overflow-hidden mb-0">
@@ -216,7 +320,7 @@
                                                             @php
                                                                 $images = json_decode($property->images, true);
                                                             @endphp
-                                                    
+
                                                             @if (is_array($images) && count($images) > 0)
                                                                 <img src="{{ asset('profil_pic/' . $images[0]) }}" alt="{{$property->title}}" style="width: 100%; height: auto;">
                                                             @else
@@ -232,13 +336,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="listing-caption-wrapper px-3">
                                             <div class="listing-detail-wrapper">
                                                 <div class="listing-short-detail-wrap">
                                                     <div class="listing-short-detail">
                                                         <div class="d-flex align-items-center">
-                                                            <span class="label bg-light-success text-success prt-type me-2">{{$property->status}}</span><span class="label bg-light-purple text-purple property-cats">{{$property->type}}</span>
+                                                            @if ($property->status == "rent")
+                                                                <span class="label bg-light-success text-success prt-type me-2"> A Louer </span><span class="label bg-light-purple text-purple property-cats">{{$property->type}}</span>
+                                                            @else
+                                                                <span class="label bg-light-danger text-danger prt-type me-2"> A Vendre </span><span class="label bg-light-purple text-purple property-cats">{{$property->type}}</span>
+                                                            @endif
                                                         </div>
                                                         <h4 class="listing-name fw-semibold fs-5 mb-1"><a href="{{route('property.show', ['slug' => $property->getSlug(), 'property' => $property])}}"> {{$property->title}} </a></h4>
                                                         <div class="prt-location text-muted-2">
@@ -253,7 +361,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="price-features-wrapper">
                                                 <div class="list-fx-features d-flex align-items-center justify-content-between">
                                                     <div class="listing-card d-flex align-items-center">
@@ -267,7 +375,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="listing-detail-footer d-flex align-items-center justify-content-between py-4">
                                                 <div class="listing-short-detail-flex">
                                                     <h6 class="listing-card-info-price m-0">${{ number_format($property->price, thousands_separator: ' ') }} </h6>
@@ -283,31 +391,31 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                        
+
                                         </div>
-                                        
+
                                     </div>
                                 </div>
-                                <!-- End Single Property -->  
+                                <!-- End Single Property -->
                             @endforeach
-                        @endif	
+                        @endif
 				    </div>
-					
+
 					<div class="row align-items-center justify-content-center">
 						<div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
 							<a href="{{route('property.index')}}" class="btn btn-primary px-md-5 rounded">Voir Plus</a>
 						</div>
 					</div>
-					
-				</div>	
+
+				</div>
 			</section>
 			<!-- ================================= Explore Property =============================== -->
-			
-			
+
+
 			<!-- ============================ Property Location Start ================================== -->
 			<!--<section>
 				<div class="container">
-					
+
 					<div class="row justify-content-center">
 						<div class="col-xl-6 col-lg-7 col-md-10 text-center">
 							<div class="sec-heading center">
@@ -316,9 +424,9 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="row justify-content-center g-xl-4 g-md-3 g-4">
-					
+
 						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
 							<div class="location-property-wrap rounded-4 p-2">
 								<div class="location-property-thumb rounded-4">
@@ -342,7 +450,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
 							<div class="location-property-wrap rounded-4 p-2">
 								<div class="location-property-thumb rounded-4">
@@ -366,7 +474,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
 							<div class="location-property-wrap rounded-4 p-2">
 								<div class="location-property-thumb rounded-4">
@@ -390,7 +498,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
 							<div class="location-property-wrap rounded-4 p-2">
 								<div class="location-property-thumb rounded-4">
@@ -414,7 +522,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
 							<div class="location-property-wrap rounded-4 p-2">
 								<div class="location-property-thumb rounded-4">
@@ -438,7 +546,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
 							<div class="location-property-wrap rounded-4 p-2">
 								<div class="location-property-thumb rounded-4">
@@ -462,7 +570,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
 							<div class="location-property-wrap rounded-4 p-2">
 								<div class="location-property-thumb rounded-4">
@@ -486,7 +594,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
 							<div class="location-property-wrap rounded-4 p-2">
 								<div class="location-property-thumb rounded-4">
@@ -510,24 +618,24 @@
 								</div>
 							</div>
 						</div>
-						
+
 					</div>
-					
+
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
 							<a href="listings-list-with-sidebar.html" class="btn btn-primary px-md-5 rounded">Browse More Locations</a>
 						</div>
 					</div>
-					
+
 				</div>
 			</section>-->
 			<!-- ============================ Property Location End ================================== -->
-			
-			
+
+
 			<!-- ============================ Smart Testimonials ================================== -->
 			<section class="gray">
 				<div class="container">
-				
+
 					<div class="row justify-content-center">
 						<div class="col-xl-6 col-lg-7 col-md-10 text-center">
 							<div class="sec-heading center">
@@ -536,13 +644,13 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="row justify-content-center">
-						
+
 						<div class="col-lg-12 col-md-12">
-							
+
 							<div class="smart-textimonials smart-center" id="smart-textimonials">
-								
+
 								<!-- Single Item -->
 								<div class="item">
 									<div class="item-box">
@@ -554,18 +662,18 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="smart-tes-content">
 											<p>Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken specimens.</p>
 										</div>
-										
+
 										<div class="st-author-info">
 											<h4 class="st-author-title">Adam Williams</h4>
 											<span class="st-author-subtitle">CEO Of Microwoft</span>
 										</div>
 									</div>
 								</div>
-								
+
 								<!-- Single Item -->
 								<div class="item">
 									<div class="item-box">
@@ -577,18 +685,18 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="smart-tes-content">
 											<p>Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken specimens.</p>
 										</div>
-										
+
 										<div class="st-author-info">
 											<h4 class="st-author-title">Retha Deowalim</h4>
 											<span class="st-author-subtitle">CEO Of Apple</span>
 										</div>
 									</div>
 								</div>
-								
+
 								<!-- Single Item -->
 								<div class="item">
 									<div class="item-box">
@@ -600,18 +708,18 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="smart-tes-content">
 											<p>Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken specimens.</p>
 										</div>
-										
+
 										<div class="st-author-info">
 											<h4 class="st-author-title">Sam J. Wasim</h4>
 											<span class="st-author-subtitle">Pio Founder</span>
 										</div>
 									</div>
 								</div>
-								
+
 								<!-- Single Item -->
 								<div class="item">
 									<div class="item-box">
@@ -623,18 +731,18 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="smart-tes-content">
 											<p>Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken specimens.</p>
 										</div>
-										
+
 										<div class="st-author-info">
 											<h4 class="st-author-title">Usan Gulwarm</h4>
 											<span class="st-author-subtitle">CEO Of Facewarm</span>
 										</div>
 									</div>
 								</div>
-								
+
 								<!-- Single Item -->
 								<div class="item">
 									<div class="item-box">
@@ -646,30 +754,30 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="smart-tes-content">
 											<p>Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken specimens.</p>
 										</div>
-										
+
 										<div class="st-author-info">
 											<h4 class="st-author-title">Shilpa Shethy</h4>
 											<span class="st-author-subtitle">CEO Of Zapple</span>
 										</div>
 									</div>
 								</div>
-								
+
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
 			</section>
 			<!-- ============================ Smart Testimonials End ================================== -->
-			
+
 			<!-- ============================ Price Table Start ================================== -->
 			<!--<section>
 				<div class="container">
-				
+
 					<div class="row justify-content-center">
 						<div class="col-xl-6 col-lg-7 col-md-10 text-center">
 							<div class="sec-heading center">
@@ -678,12 +786,12 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="row align-items-center justify-content-center g-lg-4 g-md-3 g-4">
-					
+
 						<div class="col-xl-4 col-lg-4 col-md-4">
 							<div class="pricing-wrap py-3 px-3">
-								
+
 								<div class="pricing-header bg-dark">
 									<h4 class="pr-value text-light"><sup class="text-light opacity-75">$</sup>49</h4>
 									<h4 class="pr-title text-info">Basic Package</h4>
@@ -700,13 +808,13 @@
 								<div class="pricing-bottom mt-5 mb-1 px-2">
 									<a href="#" class="btn btn-light-primary rounded full-width">Choose Plan</a>
 								</div>
-								
+
 							</div>
 						</div>
-						
+
 						<div class="col-xl-4 col-lg-4 col-md-4">
 							<div class="pricing-wrap py-3 px-3">
-								
+
 								<div class="pricing-header bg-primary">
 									<h4 class="pr-value text-light"><sup class="text-light opacity-75">$</sup>99</h4>
 									<h4 class="pr-title text-light">PLATINUM PACKAGE</h4>
@@ -723,13 +831,13 @@
 								<div class="pricing-bottom mt-5 mb-1 px-2">
 									<a href="#" class="btn btn-dark rounded full-width">Choose Plan</a>
 								</div>
-								
+
 							</div>
 						</div>
-						
+
 						<div class="col-xl-4 col-lg-4 col-md-4">
 							<div class="pricing-wrap py-3 px-3">
-								
+
 								<div class="pricing-header bg-dark">
 									<h4 class="pr-value text-light"><sup class="text-light opacity-75">$</sup>199</h4>
 									<h4 class="pr-title text-info">STANDARD PACKAGE</h4>
@@ -746,13 +854,13 @@
 								<div class="pricing-bottom mt-5 mb-1 px-2">
 									<a href="#" class="btn btn-light-primary rounded full-width">Choose Plan</a>
 								</div>
-								
+
 							</div>
 						</div>
-						
+
 					</div>
-					
-				</div>	
+
+				</div>
 			</section>-->
 			<!-- ============================ Price Table End ================================== -->
 
@@ -769,7 +877,7 @@
             @foreach ($properties as $property)
             <div class="col-3 mb-4">
                 @include('property.card')
-            </div>  
+            </div>
             @endforeach
         </div>
     </div>--}}

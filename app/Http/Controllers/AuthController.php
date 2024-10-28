@@ -67,15 +67,15 @@ class AuthController extends Controller
             ]);
 
             $user = Auth::user();
+            //dd($user);
 
-            if($user->signas == 'user'){
+            if($user->signas === 'customer'){
                 return redirect()->intended(route('admin.profile'));
-            } /* elseif($user->signas == 'agent'){
-                return redirect()->intended(route('auth.property.agent'));
-            }elseif($user->signas == 'agency'){
-                return redirect()->intended(route('auth.property.agency'));
-            }*/
-            //return redirect()->route('auth.login', $request->$token)->with('success','Inscription réussie');
+            } elseif($user->signas === 'agent'){
+                return redirect()->intended(route('singleAgent', $user_id));
+            }elseif($user->signas === 'agency'){
+                return redirect()->intended(route('SingleAgency'));
+            }
             return redirect()->route('login')
                 ->withErrors($validation)
                 ->withInput($request->only('email'));

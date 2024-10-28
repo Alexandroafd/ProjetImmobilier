@@ -49,4 +49,9 @@ class Property extends Model
     {
         return $builder->where('sold', false);
     }
+
+    /*public function user()
+    {
+        return $this->belongsTo(User::class);
+    }*/
 }

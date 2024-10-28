@@ -100,8 +100,6 @@
 											{{--<img src="{{asset('assets/img/team-1.jpg')}}" class="avater-img" alt="">--}}
                                             @if (auth()->user()->profile_pic)
                                                 <img src="{{ asset('storage/profile_pics/' . auth()->user()->profile_pic) }}" class="avater-img" alt="Photo de profil">
-                                            @else
-                                                Aucune photo disponible
                                             @endif
                                             Hi, {{ Auth::user()->name }}
 										</button>

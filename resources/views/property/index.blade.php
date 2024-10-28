@@ -14,7 +14,7 @@
 				<div class="container">
 					<!--<div class="row justify-content-center">
 						<div class="col-lg-12 col-md-12">
-							
+
 							<div class="full-search-2 eclip-search italian-search hero-search-radius shadow-hard">
 								<div class="hero-search-content">
 									<div class="row">
@@ -34,13 +34,13 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="col-lg-2 col-md-3 col-sm-12">
 											<div class="form-group">
 												<a href="#" class="btn btn-dark full-width">Search</a>
 											</div>
 										</div>
-												
+
 									</div>
 								</div>
 							</div>
@@ -59,16 +59,16 @@
                             </button>
                         </form>
                     </div>
-                    
+
 				</div>
 				<div class="ht-30"></div>
 			</section>
 			<!-- ============================ Page Title End ================================== -->
-			
+
 			<!-- ============================ All Property ================================== -->
 			<section class="bg-light">
 				<div class="container">
-					
+
 					<!--<div class="row justify-content-center">
 						<div class="col-lg-12 col-md-12">
 							<div class="item-shorting-box">
@@ -122,9 +122,9 @@
 							</div>
 						</div>
 					</div>-->
-							
+
 					<div class="row">
-						
+
 						<div class="col-lg-12 col-sm-12 list-layout">
 							<div class="row">
 
@@ -132,13 +132,13 @@
                                     <!-- Single Property Start -->
                                     <div class="col-xl-6 col-lg-6 col-md-12">
                                         <div class="property-listing property-1 bg-white p-2 rounded">
-                                                
+
                                             <div class="listing-img-wrapper">
                                                 @if ($property->images)
                                                     @php
                                                         $images = json_decode($property->images, true);
                                                     @endphp
-                                            
+
                                                     @if (is_array($images) && count($images) > 0)
                                                         <img src="{{ asset('profil_pic/' . $images[0]) }}" alt="{{$property->title}}" style="width: 100%; height: auto;">
                                                     @else
@@ -148,14 +148,18 @@
                                                     <p>Aucune image disponible.</p>
                                                 @endif
                                             </div>
-                                            
+
                                             <div class="listing-content">
-                                            
+
                                                 <div class="listing-detail-wrapper-box">
                                                     <div class="listing-detail-wrapper d-flex align-items-center justify-content-between">
                                                         <div class="listing-short-detail">
-                                                            <span class="label bg-light-success text-success d-inline-flex mb-1">{{$property->status}}</span>
-                                                            <h4 class="listing-name mb-0"><a href="{{route('property.show', ['slug' => $property->getSlug(), 'property' => $property])}}">{{ Illuminate\Support\Str::limit($property->title, 25, '...') }}</a></h4>
+                                                            @if ($property->status == "rent")
+                                                            <span class="label bg-light-success text-success prt-type me-2"> A Louer </span><span class="label bg-light-purple text-purple property-cats">{{$property->type}}</span>
+                                                        @else
+                                                            <span class="label bg-light-danger text-danger prt-type me-2"> A Vendre </span><span class="label bg-light-purple text-purple property-cats">{{$property->type}}</span>
+                                                        @endif
+                                                        <h4 class="listing-name mb-0"><a href="{{route('property.show', ['slug' => $property->getSlug(), 'property' => $property])}}">{{ Illuminate\Support\Str::limit($property->title, 25, '...') }}</a></h4>
                                                             <div class="fr-can-rating">
                                                                 <i class="fas fa-star fs-xs filled"></i>
                                                                 <i class="fas fa-star fs-xs filled"></i>
@@ -164,14 +168,14 @@
                                                                 <i class="fas fa-star fs-xs"></i>
                                                                 <span class="reviews_text fs-sm text-muted ms-2">(36 Reviews)</span>
                                                             </div>
-                                                            
+
                                                         </div>
                                                         <div class="list-price">
-                                                            <h6 class="listing-card-info-price text-primary">${{ $property->price}}</h6>
+                                                            <h6 class="listing-card-info-price text-primary">${{ number_format($property->price, thousands_separator: ' ') }}</h6>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="price-features-wrapper">
                                                     <div class="list-fx-features d-flex align-items-center justify-content-between">
                                                         <div class="listing-card d-flex align-items-center">
@@ -185,7 +189,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            
+
                                                 <div class="listing-footer-wrapper">
                                                     <div class="listing-locate">
                                                         <span class="listing-location text-muted-2"><i class="fa-solid fa-location-pin me-1"></i>{{ $property->city }}, {{ $property->state }}</span>
@@ -194,31 +198,31 @@
                                                         <a href="{{route('property.show', ['slug' => $property->getSlug(), 'property' => $property])}}" class="btn btn-sm px-4 fw-medium btn-primary">Voir</a>
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
-                                            
+
                                         </div>
                                     </div>
-                                    <!-- Single Property End -->																
+                                    <!-- Single Property End -->
                                 @empty
                                     <div class="col text-center">
                                         Aucun bien ne correspond à votre recherche
                                     </div>
                                 @endforelse
-								
+
 							</div>
-							
+
 							<!-- Pagination -->
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-sm-12">
                                     {{ $properties->links() }}
 								</div>
 							</div>
-					
+
 						</div>
-						
+
 					</div>
-				</div>		
+				</div>
 			</section>
 			<!-- ============================ All Property ================================== -->
 

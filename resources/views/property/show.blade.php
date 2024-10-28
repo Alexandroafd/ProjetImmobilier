@@ -14,7 +14,7 @@
 								<div class="prt-detail-title-desc">
 									<span class="label text-light bg-warning mb-1 d-inline-flex"> {{$property->status}} </span>
 									<h3 class="text-light"> {{$property->title}} </h3>
-									<span><i class="lni-map-marker"></i> {{$property->postal_code}}, {{$property->address}}, {{$property->city}} </span>
+									<span><i class="lni-map-marker"></i> {{$property->postal_code}}; {{$property->address}}; {{$property->city}} </span>
 									<h3 class="prt-price-fix text-light">$ {{ number_format($property->price, thousands_separator: ' ')}}</h3>
 									<div class="pbwts-social">
 										<ul>
@@ -27,24 +27,24 @@
 									</div>
 								</div>
 							</div>
-							
-						</div>	
+
+						</div>
 					</div>
 				</div>
 			</section>
 			<!-- ============================ Property Header Info Start================================== -->
-			
+
 			<!-- ============================ Property Detail Start ================================== -->
 			<section class="gray-simple">
 				<div class="container">
 					<div class="row">
-						
+
 						<!-- property main detail -->
 						<div class="col-lg-8 col-md-12 col-sm-12">
 							@include('shared.alert')
 							<!-- Single Block Wrap -->
 							<div class="property_block_wrap style-2">
-								
+
 								<div class="property_block_wrap_header">
 									<a data-bs-toggle="collapse" data-parent="#features" data-bs-target="#clOne" aria-controls="clOne" href="javascript:void(0);" aria-expanded="false"><h4 class="property_block_title">Détails & Caractéristiques</h4></a>
 								</div>
@@ -53,19 +53,25 @@
 										<ul class="deatil_features">
 											<li><strong>Chambres:</strong> {{$property->bedrooms}} </li>
 											<li><strong>Pièces:</strong>{{$property->rooms}} </li>
-											<li><strong>Surface:</strong>{{$property->surface}} </li>
+											<li><strong>Surface:</strong>{{$property->surface}} mCarré</li>
 											<li><strong>Type de Propriété:</strong>{{$property->type}} </li>
-                                            <li><strong>Etage</strong>{{ $property->floor ?: 'Rez de chaussé' }}</li>
-											<li><strong>Year:</strong>Built1982</li>
+                                            <li><strong>Etage:</strong>{{ $property->floor ?: 'Rez de chaussé' }}</li>
+											<li><strong>Statut:</strong>
+                                                @if ($property->sold == 0)
+                                                    Disponible
+                                                @else
+                                                    Non Disponible
+                                                @endif
+                                            </li>
 										</ul>
 									</div>
 								</div>
-								
+
 							</div>
-							
+
 							<!-- Single Block Wrap -->
 							<div class="property_block_wrap style-2">
-								
+
 								<div class="property_block_wrap_header">
 									<a data-bs-toggle="collapse" data-parent="#dsrp" data-bs-target="#clTwo" aria-controls="clTwo" href="javascript:void(0);" aria-expanded="true"><h4 class="property_block_title">Description</h4></a>
 								</div>
@@ -75,14 +81,14 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<!-- Single Block Wrap -->
 							<div class="property_block_wrap style-2">
-								
+
 								<div class="property_block_wrap_header">
 									<a data-bs-toggle="collapse" data-parent="#amen"  data-bs-target="#clThree" aria-controls="clThree" href="javascript:void(0);" aria-expanded="true"><h4 class="property_block_title">Options</h4></a>
 								</div>
-								
+
 								<div id="clThree" class="panel-collapse collapse show">
 									<div class="block-body">
                                         @foreach ($options as $option)
@@ -93,14 +99,14 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<!-- Single Block Wrap -->
 							<div class="property_block_wrap style-2">
-								
+
 								<div class="property_block_wrap_header">
 									<a data-bs-toggle="collapse" data-parent="#clSev"  data-bs-target="#clSev" aria-controls="clOne" href="javascript:void(0);" aria-expanded="true" class="collapsed"><h4 class="property_block_title">Gallery</h4></a>
 								</div>
-								
+
 								<div id="clSev" class="panel-collapse collapse">
 									<div class="block-body">
 										<ul class="list-gallery-inline">
@@ -122,18 +128,18 @@
                                                 @else
                                                     <p>Aucune image disponible.</p>
                                                 @endif
-											
+
 										</ul>
 									</div>
 								</div>
-								
+
 							</div>
 
 						</div>
-						
+
 						<!-- property Sidebar -->
 						<div class="col-lg-4 col-md-12 col-sm-12">
-							
+
 							<!-- Like And Share -->
 							<!--<div class="like_share_wrap b-0">
 								<ul class="like_share_list">
@@ -141,9 +147,9 @@
 									<li><a href="JavaScript:Void(0);" class="btn btn-likes" data-toggle="tooltip" data-original-title="Save"><i class="fas fa-heart"></i>Save</a></li>
 								</ul>
 							</div>-->
-							
+
 							<div class="details-sidebar">
-							
+
 								<!-- Agent Detail -->
 								<div class="sides-widget">
 									<div class="sides-widget-header bg-primary">
@@ -154,7 +160,7 @@
 										</div>
 										<div class="clearfix"></div>
 									</div>
-									
+
 									<form method="post" action="{{ route('property.contact', $property) }}">
                                         @csrf
                                         <div class="sides-widget-body simple-form">
@@ -184,7 +190,7 @@
                                         </div>
                                     </form>
 								</div>
-								
+
 								<!-- Mortgage Calculator -->
 								{{--<div class="sides-widget">
 
@@ -195,7 +201,7 @@
 										</div>
 										<div class="clearfix"></div>
 									</div>
-									
+
 									<div class="sides-widget-body simple-form">
 										<div class="form-group">
 											<div class="input-with-icon">
@@ -203,40 +209,40 @@
 												<i class="fa-solid fa-sack-dollar"></i>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<div class="input-with-icon">
 												<input type="text" class="form-control" placeholder="Down Payment">
 												<i class="fa-solid fa-piggy-bank"></i>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<div class="input-with-icon">
 												<input type="text" class="form-control" placeholder="Loan Term (Years)">
 												<i class="fa-regular fa-calendar-days"></i>
 											</div>
 										</div>
-										
+
 										<div class="form-group">
 											<div class="input-with-icon">
 												<input type="text" class="form-control" placeholder="Interest Rate">
 												<i class="fa fa-percent"></i>
 											</div>
 										</div>
-										
+
 										<button class="btn btn-light-primary fw-medium rounded full-width">Calculate</button>
-									
+
 									</div>
 								</div>
-								
+
 								<!-- Featured Property -->
 								<div class="sidebar-widgets">
-									
+
 									<h4>Featured Property</h4>
-									
+
 									<div class="sidebar_featured_property">
-										
+
 										<!-- List Sibar Property -->
 										<div class="sides_list_property">
 											<div class="sides_list_property_thumb">
@@ -255,7 +261,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<!-- List Sibar Property -->
 										<div class="sides_list_property">
 											<div class="sides_list_property_thumb">
@@ -274,7 +280,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<!-- List Sibar Property -->
 										<div class="sides_list_property">
 											<div class="sides_list_property_thumb">
@@ -293,7 +299,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<!-- List Sibar Property -->
 										<div class="sides_list_property">
 											<div class="sides_list_property_thumb">
@@ -312,19 +318,19 @@
 												</div>
 											</div>
 										</div>
-										
+
 									</div>
-									
+
 								</div>--}}
-							
+
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
 			</section>
 			<!-- ============================ Property Detail End ================================== -->
-			
+
 <!--<div class="container mt-4">
     <h1>{{ $property->title }}</h1>
     <h2>{{ $property->rooms }}pièces - {{ $property->surface }}mCarré</h2>
@@ -343,13 +349,13 @@
             <p class="mb-0 pb-0 text-white">&nbsp; &nbsp;{{ Session::get('success') }} </p>
         </div>
         @endif
-    
+
         @if (Session::has('error'))
         <div class="bg-danger py-4 mb-4 rounded">
             <p class="mb-0 pb-0 text-white">&nbsp; &nbsp;{{ Session::get('error') }} </p>
         </div>
         @endif
-        
+
         <form action="{{ route('property.contact', $property) }}" method="post" class="vstack gap-3">
             @csrf
             <div class="row">

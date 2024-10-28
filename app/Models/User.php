@@ -44,4 +44,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function agent() {
+        return $this->belongsTo(Agent::class);
+    }
+
+    public function agency() {
+        return $this->belongsTo(Agency::class);
+    }
 }
