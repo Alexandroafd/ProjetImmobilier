@@ -5,9 +5,9 @@
 <head>
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+        <link href="{{asset('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="{{asset('https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css')}}" rel="stylesheet">
+        <script src="{{asset('https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js')}}"></script>
 
         <title> @yield('title') | Administration </title>
 
@@ -86,10 +86,10 @@
                         @endphp
 						<div class="nav-menus-wrapper" style="transition-property: none;">
 							<ul class="nav-menu">
-								<li><a href="{{ route('admin.property.index') }}" @class(['nav-link', 'active' => str_contains($route, 'property.')])>Gérer mes biens<span class="submenu-indicator"></span></a>
+								<li class="{{ str_contains($route, 'admin.property') ? 'active' : '' }}"><a href="{{ route('admin.property.index') }}">Gérer mes biens<span class="submenu-indicator"></span></a>
 								</li>
 
-								<li><a href="{{ route('admin.option.index') }}" @class(['nav-link', 'active' => str_contains($route, 'option.')])>Gérer mes options<span class="submenu-indicator"></span></a>
+								<li class="{{ str_contains($route, 'admin.option') ? 'active' : '' }}"><a href="{{ route('admin.option.index') }}">Gérer mes options<span class="submenu-indicator"></span></a>
 								</li>
 							</ul>
 
@@ -129,10 +129,10 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12 col-md-12">
-							
+
 							<h2 class="ipt-title">Bienvenu !!</h2>
 							<span class="ipn-subtitle">Bienvenu sur Votre Compte</span>
-							
+
 						</div>
 					</div>
 				</div>

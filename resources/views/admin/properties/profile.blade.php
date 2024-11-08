@@ -36,7 +36,6 @@
                                             @if (auth()->user()->profile_pic) 
                                                 <img src="{{ asset('storage/profile_pics/' . auth()->user()->profile_pic) }}" class="img-fluid avater" alt="Photo de profil">
                                             @else
-											    {{--<img src="{{asset('assets/img/team-1.jpg')}}" class="img-fluid avater" alt="">--}}
                                                 Aucune photo disponible
                                             @endif
 

@@ -88,18 +88,20 @@ class PropertyController extends Controller
  
     public function singleAgent($user_id)
     {
-        $user = User::find($user_id);
+        //$agents = User::where('agent_id', Auth::user()->id)->with('agent')->first();
+        //dd($agents);
+        /*$user = User::find($user_id);
         dd($user);
         $agent = $user->agent;
 
         if(!$agent)
         {
             return redirect()->back()->with('error', 'Cet utilisateur n\'a pas d\'agent associé.');
-        }
+        }*/
 
-        return view('pages.singleAgent', 
-            compact('user', 'agent')
-        );
+        return view('pages.singleAgent');
+            /*compact('user', 'agent')
+        );*/
     } 
 
     public function listAgency()

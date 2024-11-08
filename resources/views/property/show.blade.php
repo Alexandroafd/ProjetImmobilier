@@ -12,7 +12,15 @@
                             @include('shared.alert')
 							<div class="property_block_wrap style-4">
 								<div class="prt-detail-title-desc">
-									<span class="label text-light bg-warning mb-1 d-inline-flex"> {{$property->status}} </span>
+									<span class="label text-light bg-warning mb-1 d-inline-flex"> 
+                                        
+                                        @if ($property->status == 'rent')
+                                        A Louer
+                                        @else
+                                        A Vendre                                            
+                                        @endif 
+
+                                    </span>
 									<h3 class="text-light"> {{$property->title}} </h3>
 									<span><i class="lni-map-marker"></i> {{$property->postal_code}}; {{$property->address}}; {{$property->city}} </span>
 									<h3 class="prt-price-fix text-light">$ {{ number_format($property->price, thousands_separator: ' ')}}</h3>

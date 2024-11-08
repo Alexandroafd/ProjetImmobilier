@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="FR-fr">
-	
+
 <!-- Mirrored from shreethemes.net/resido-live/resido/create-account.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Oct 2024 12:02:13 GMT -->
 <head>
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		
-        <title> @yield('title') </title>	
-		
+
+        <title> @yield('title') </title>
+
         <!-- Custom CSS -->
         <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
-		
+
 		<!-- Custom Color Option -->
 		<link href="{{ asset('assets/css/colors.css') }}" rel="stylesheet">
-		
+
     </head>
-	
+
     <body class="blue-skin">
-	
+
 		 <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
         <!-- ============================================================== -->
         <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
-		
+
         <!-- ============================================================== -->
         <!-- Main wrapper - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <div id="main-wrapper">
-		
+
             <!-- ============================================================== -->
             <!-- Top header  -->
             <!-- ============================================================== -->
@@ -67,129 +67,32 @@
                                                         <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor"/>
                                                         <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor"/>
                                                     </svg>
-                                                </span>	
+                                                </span>
                                             </a>
                                         @endif
 									</li>
-									<!--<li>
-										<a href="#" class="text-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
-											<span class="svg-icon svg-icon-2hx">
-												<svg width="22" height="22" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<rect y="6" width="16" height="3" rx="1.5" fill="currentColor"/>
-													<rect opacity="0.3" y="12" width="8" height="3" rx="1.5" fill="currentColor"/>
-													<rect opacity="0.3" width="12" height="3" rx="1.5" fill="currentColor"/>
-												</svg>
-											</span>
-										</a>
-									</li>-->
 								</ul>
 							</div>
 						</div>
+
+                        @php
+                            $route = request()->route()->getName();
+                        @endphp
 						<div class="nav-menus-wrapper" style="transition-property: none;">
 							<ul class="nav-menu">
-							
-								<li><a href="{{route('home')}}">Accueil<span class="submenu-indicator"></span></a>
-									{{--<ul class="nav-dropdown nav-submenu">
-										<li><a class="active" href="index.html">Home Layout 1</a></li>
-										<li><a href="home-2.html">Home Layout 2</a></li>
-										<li><a href="home-3.html">Home Layout 3</a></li>
-										<li><a href="home-4.html">Home Layout 4</a></li>
-										<li><a href="home-5.html">Home Layout 5</a></li>
-										<li><a href="home-6.html">Home Layout 6</a></li>
-										<li><a href="home-7.html">Home Layout 7</a></li>
-										<li><a href="home-8.html">Home Layout 8</a></li>
-										<li><a href="home-9.html">Home Layout 9</a></li>
-										<li><a href="home-10.html">Home Layout 10<span class="ms-2 label-new">New</span></a></li>
-										<li><a href="home-11.html">Home Layout 11<span class="ms-2 label-new">New</span></a></li>
-										<li><a href="video.html">Video Home</a></li>
-										<li><a href="map.html">Map Home Layout</a></li>
-									</ul>--}}
+
+								<li class="{{ $route === 'home' ? 'active' : '' }}"><a href="{{route('home')}}">Accueil<span class="submenu-indicator"></span></a>
 								</li>
-								
-								<li><a href="{{route('property.index')}}">Biens<span class="submenu-indicator"></span></a>
-									{{--<ul class="nav-dropdown nav-submenu">
-										<li><a href="JavaScript:Void(0);"> Biens <span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="list-layout-new.html">List Layout Simple<span class="ms-2 label-new">New</span></a></li>
-												<li><a href="list-layout-new-3.html">List Layout Modern<span class="ms-2 label-new">New</span></a></li>                                    
-												<li><a href="list-layout-new-2.html">List Layout Advance<span class="ms-2 label-new">New</span></a></li>                                    
-												<li><a href="list-layout-with-map.html">With Map</a></li>                                    
-												<li><a href="list-layout-full.html">Full Width</a></li>
-											</ul>
-										</li>
-										<li><a href="JavaScript:Void(0);">Grid Layout<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="grid-layout-with-sidebar.html">With Sidebar</a></li>                                    
-												<li><a href="classical-layout-with-sidebar.html">Classical With Sidebar</a></li>                                    
-												<li><a href="grid-layout-with-map.html">With Map</a></li>                                    
-												<li><a href="grid.html">Full Width</a></li>
-												<li><a href="classical-property.html">Classical Full Width</a></li>	 
-											</ul>
-										</li>
-										<li><a href="JavaScript:Void(0);">With Map Property<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="list-layout-with-map.html">List With Map</a></li>                                    
-												<li><a href="grid-layout-with-map.html">Grid With Map</a></li>                                    
-												<li><a href="classical-layout-with-map.html">Classical With Map</a></li>                                    
-												<li><a href="half-map.html">Half Map Search</a></li>
-												<li><a href="half-map-2.html">Half Map Search 02<span class="ms-2 label-new">New</span></a></li>												
-											</ul>
-										</li>
-									</ul>--}}
+
+								<li class="{{ str_contains($route, 'property') ? 'active' : '' }}"><a href="{{route('property.index')}}">Biens<span class="submenu-indicator"></span></a>
 								</li>
-								
-								{{--<li><a href="single-property-1.html">Features<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="JavaScript:Void(0);">Single Property<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="single-property-1.html">Single Property 1</a></li>                                    
-												<li><a href="single-property-2.html">Single Property 2</a></li>                                    
-												<li><a href="single-property-3.html">Single Property 3</a></li> 
-												<li><a href="single-property-4.html">Single Property 4<span class="ms-2 label-new">New</span></a></li> 												
-											</ul>
-										</li>
-										<li><a href="JavaScript:Void(0);">Agencies & Agents<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="agents.html">Agents List</a></li>                                    
-												<li><a href="agent-page.html">Agent Page</a></li>                                    
-												<li><a href="agencies.html">Agencies List</a></li>                                    
-												<li><a href="agency-page.html">Agency Page</a></li> 
-											</ul>
-										</li>
-										<li><a href="JavaScript:Void(0);">My Account<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="dashboard.html">User Dashboard</a></li><li><a href="payment.html">Payment Confirmation</a></li>
-												<li><a href="my-profile.html">My Profile</a></li>                                    
-												<li><a href="my-property.html">Property List</a></li>                                    
-												<li><a href="bookmark-list.html">Bookmarked Listings</a></li>                                    
-												<li><a href="change-password.html">Change Password</a></li> 
-											</ul>
-										</li>
-										<li>
-											<a href="compare-property.html">Compare Property</a>                                
-										</li>
-										<li>
-											<a href="submit-property.html">Submit Property</a>                                
-										</li>
-									</ul>
-								</li>--}}
-								
-								{{--<li><a href="JavaScript:Void(0);">Pages<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="blog.html">Blogs Page</a></li>                                    
-										<li><a href="blog-detail.html">Blog Detail</a></li>                                    
-										<li><a href="component.html">Shortcodes</a></li> 
-										<li><a href="pricing.html">Pricing</a></li>  
-										<li><a href="404.html">Error Page</a></li>
-										<li><a href="contact.html">Contacts</a></li>
-									</ul>
-								</li>--}}
-								
+
 							</ul>
-							
+
 							<ul class="nav-menu nav-menu-social align-to-right">
-								
+
                                 <li>
+                                    @if (!Auth::check())
                                     <a href="{{route('login')}}" data-bs-toggle="modal" data-bs-target="#login" class="fw-medium text-muted-2">
                                         <span class="svg-icon svg-icon-2hx me-1">
                                             <svg width="22" height="22" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -200,8 +103,10 @@
                                         </span>
                                             Connexion / Inscription
                                     </a>
+                                    @endif
+                                    
                                 </li>
-                                @if (Auth::check())                                
+                                @if (Auth::check())
                                     <li class="add-listing">
                                         <a href="{{route('admin.property.create')}}" class="bg-primary">
                                             <span class="svg-icon svg-icon-muted svg-icon-2hx me-1">
@@ -223,7 +128,7 @@
                                                 </svg>
                                             </span>
                                         </a>
-                                    </li>--> 
+                                    </li>-->
                                 @endif
 							</ul>
 						</div>
@@ -232,7 +137,7 @@
 			</div>
 			<!-- End Navigation -->
 			<div class="clearfix"></div>
-			
+
 			{{--<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
 				<div class="offcanvas-header">
 					<h5 class="offcanvas-title" id="offcanvasScrollingLabel">Compare & Selected Property</h5>
@@ -258,7 +163,7 @@
 					<div class="tab-content" id="pills-tabContent">
 						<div class="tab-pane fade show active" id="pills-compare" role="tabpanel" aria-labelledby="pills-compare-tab" tabindex="0">
 							<div class="sidebar_featured_property">
-										
+
 								<!-- List Sibar Property -->
 								<div class="sides_list_property p-2">
 									<div class="sides_list_property_thumb">
@@ -277,7 +182,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<!-- List Sibar Property -->
 								<div class="sides_list_property p-2">
 									<div class="sides_list_property_thumb">
@@ -296,7 +201,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<!-- List Sibar Property -->
 								<div class="sides_list_property p-2">
 									<div class="sides_list_property_thumb">
@@ -315,7 +220,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<!-- List Sibar Property -->
 								<div class="sides_list_property p-2">
 									<div class="sides_list_property_thumb">
@@ -334,15 +239,15 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="input-group">
 									<a href="compare-property.html" class="btn btn-light-primary fw-medium full-width">View & Compare</a>
 								</div>
-							</div>	
+							</div>
 						</div>
 						<div class="tab-pane fade" id="pills-saved" role="tabpanel" aria-labelledby="pills-saved-tab" tabindex="0">
 							<div class="sidebar_featured_property">
-										
+
 								<!-- List Sibar Property -->
 								<div class="sides_list_property p-2">
 									<div class="sides_list_property_thumb">
@@ -361,7 +266,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<!-- List Sibar Property -->
 								<div class="sides_list_property p-2">
 									<div class="sides_list_property_thumb">
@@ -380,7 +285,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<!-- List Sibar Property -->
 								<div class="sides_list_property p-2">
 									<div class="sides_list_property_thumb">
@@ -399,7 +304,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<!-- List Sibar Property -->
 								<div class="sides_list_property p-2">
 									<div class="sides_list_property_thumb">
@@ -418,7 +323,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="input-group">
 									<a href="#" class="btn btn-light-primary fw-medium full-width">View & Compare</a>
 								</div>
@@ -438,7 +343,7 @@
 				<div>
 					<div class="container">
 						<div class="row">
-							
+
 							<div class="col-lg-3 col-md-4">
 								<div class="footer-widget">
 									<a class="nav-footer-logo" href="index.html">
@@ -454,9 +359,9 @@
 										<p>+1 246-345-0695</p>
 										<p>info@example.com</p>
 									</div>
-									
+
 								</div>
-							</div>		
+							</div>
 							<div class="col-lg-2 col-md-4">
 								<div class="footer-widget">
 									<h4 class="widget-title">Navigations</h4>
@@ -469,7 +374,7 @@
 									</ul>
 								</div>
 							</div>
-									
+
 							<div class="col-lg-2 col-md-4">
 								<div class="footer-widget">
 									<h4 class="widget-title">The Highlights</h4>
@@ -482,7 +387,7 @@
 									</ul>
 								</div>
 							</div>
-							
+
 							<div class="col-lg-2 col-md-6">
 								<div class="footer-widget">
 									<h4 class="widget-title">My Account</h4>
@@ -495,7 +400,7 @@
 									</ul>
 								</div>
 							</div>
-							
+
 							<div class="col-lg-3 col-md-6">
 								<div class="footer-widget">
 									<h4 class="widget-title">Download Apps</h4>
@@ -536,19 +441,19 @@
 									</a>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="footer-bottom">
 					<div class="container">
 						<div class="row align-items-center">
-							
+
 							<div class="col-lg-6 col-md-6">
 								<p class="mb-0">© 2023 Resido. Designd By <a href="https://themezhub.com/">Themez Hub</a> All Rights Reserved</p>
 							</div>
-							
+
 							<div class="col-lg-6 col-md-6 text-right">
 								<ul class="footer-bottom-social">
 									<li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
@@ -557,21 +462,21 @@
 									<li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
 								</ul>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>
 			</footer>
 			<!-- ============================ Footer End ================================== -->
-			
+
 			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
-			
+
 
 		</div>
 		<!-- ============================================================== -->
 		<!-- End Wrapper -->
 		<!-- ============================================================== -->
-		
+
 
 		<!-- ============================================================== -->
 		<!-- All Jquery -->
@@ -584,9 +489,9 @@
 		<script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
 		<script src="{{asset('assets/js/slick.js')}}"></script>
 		<script src="{{asset('assets/js/slider-bg.js')}}"></script>
-		<script src="{{asset('assets/js/lightbox.js')}}"></script> 
+		<script src="{{asset('assets/js/lightbox.js')}}"></script>
 		<script src="{{asset('assets/js/imagesloaded.js')}}"></script>
-		 
+
 		<script src="{{asset('assets/js/custom.js')}}"></script>
 		<!-- ============================================================== -->
 		<!-- This page plugins -->

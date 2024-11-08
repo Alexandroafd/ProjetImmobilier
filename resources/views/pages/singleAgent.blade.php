@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', 'Agent Page')
+@section('title', 'Page de l\'agent')
 
 @section('content')
 
@@ -11,7 +11,7 @@
 						<div class="col-lg-12 col-md-12">
 							
 							<h2 class="ipt-title">Agent Detail</h2>
-							<span class="ipn-subtitle">{{$agent->name}} From {{$agent->state}}</span>
+							<span class="ipn-subtitle">Adam D. Okraar From Canada</span>
 							
 						</div>
 					</div>

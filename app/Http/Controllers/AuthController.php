@@ -66,8 +66,9 @@ class AuthController extends Controller
                 'password'=> $request->password
             ]);
 
+            $user_id = Auth::user()->id; 
             $user = Auth::user();
-            //dd($user);
+            //dd($user_id);
 
             if($user->signas === 'customer'){
                 return redirect()->intended(route('admin.profile'));
