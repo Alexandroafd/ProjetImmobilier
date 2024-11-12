@@ -70,11 +70,11 @@
 											</button>
 											<div class="dropdown-menu pull-right animated flipInX" id="showings">
 												<!--<a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a>-->
-												<a href="{{ route('admin.profile') }}"><i class="fa-solid fa-address-card"></i>Mon Profil</a>
+												<a href="{{ route('admin.property.profile') }}"><i class="fa-solid fa-address-card"></i>Mon Profil</a>
 												<a href="{{ route('admin.property.index') }}"><i class="fa-solid fa-building-circle-check"></i>Mes Propriétés</a>
-												<a href="{{ route('admin.bookmarked') }}"><i class="fa-solid fa-bookmark"></i>Liste des Favoris</a>
+												<a href="{{ route('admin.property.bookmarked') }}"><i class="fa-solid fa-bookmark"></i>Liste des Favoris</a>
 												<a href="{{ route('admin.property.create') }}"><i class="fa-solid fa-house"></i>Ajouter un Bien</a>
-												<a href="{{ route('admin.changePassword') }}"><i class="fa-solid fa-unlock"></i>Changer le Mot de Passe</a>
+												<a href="{{ route('admin.property.changePassword') }}"><i class="fa-solid fa-unlock"></i>Changer le Mot de Passe</a>
 											</div>
 										</div>
 									</li>
@@ -105,11 +105,11 @@
 										</button>
 										<div class="dropdown-menu pull-right animated flipInX" id="showing">
 											<!--<a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a>-->
-											<a href="{{route('admin.profile')}}"><i class="fa-solid fa-address-card"></i>Mon Profil</a>
+											<a href="{{route('admin.property.profile')}}"><i class="fa-solid fa-address-card"></i>Mon Profil</a>
 											<a href="{{route('admin.property.index')}}"><i class="fa-solid fa-building-circle-check"></i>Mes Propriétés</a>
-											<a href="{{route('admin.bookmarked')}}"><i class="fa-solid fa-bookmark"></i>Liste des Favoris</a>
+											<a href="{{route('admin.property.bookmarked')}}"><i class="fa-solid fa-bookmark"></i>Liste des Favoris</a>
 											<a href="{{route('admin.property.create')}}"><i class="fa-solid fa-house"></i>Ajouter un Bien</a>
-											<a href="{{route('admin.changePassword')}}"><i class="fa-solid fa-unlock"></i>Changer le Mot de Passe</a>
+											<a href="{{route('admin.property.changePassword')}}"><i class="fa-solid fa-unlock"></i>Changer le Mot de Passe</a>
 										</div>
 									</div>
 								</li>

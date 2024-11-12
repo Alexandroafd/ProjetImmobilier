@@ -45,12 +45,12 @@
 										<div class="d-navigation">
 											<ul>
 												<!--<li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>-->
-												<li><a href="{{route('admin.profile')}}"><i class="fa-solid fa-address-card"></i>Mon Profil</a></li>
-												<li><a href="{{route('admin.bookmarked')}}"><i class="fa-solid fa-bookmark"></i>Liste des Favoris</a></li>
+												<li><a href="{{route('admin.property.profile')}}"><i class="fa-solid fa-address-card"></i>Mon Profil</a></li>
+												<li><a href="{{route('admin.property.bookmarked')}}"><i class="fa-solid fa-bookmark"></i>Liste des Favoris</a></li>
 												<li><a href="{{route('admin.property.index')}}"><i class="fa-solid fa-building-circle-check"></i>Mes Propriétés</a></li>
 												<li><a href="{{route('admin.property.create')}}"><i class="fa-solid fa-house"></i>Ajouter un Bien</a></li>
 												<li><a href="{{route('property.index')}}"><i class="fa-solid fa-gauge"></i>Rechercher un Bien</a></li>
-												<li class="active"><a href="{{route('admin.changePassword')}}"><i class="fa-solid fa-unlock"></i>Changer le Mot de passe</a></li>
+												<li class="active"><a href="{{route('admin.property.changePassword')}}"><i class="fa-solid fa-unlock"></i>Changer le Mot de passe</a></li>
 												<li><a href="{{route('logout')}}"><i class="fa-solid fa-power-off"></i>Déconnexion</a></li>
 											</ul>
 										</div>
@@ -67,7 +67,7 @@
 								<!-- Basic Information -->
 								<div class="form-submit">	
 									<h4>Changer votre Mot de Passe</h4>
-                                    <form method="post" action="{{route('admin.updatePassword')}}">
+                                    <form method="post" action="{{route('admin.property.updatePassword')}}">
                                         @csrf
                                         <div class="submit-section">
                                             <div class="row">
@@ -80,7 +80,7 @@
                                                     @enderror
                                                 </div>
                                                 
-                                                <div class="form-group col-md-6">
+                                                <div class="form-group col-lg-12 col-md-6">
                                                     <label>Nouveau mot de passe</label>
                                                     <input id="new_password" name="new_password" type="password" class="form-control @error('new_password') is-invalid @enderror" value="{{ old('new_password') }}">
                                                     @error('new_password')
@@ -88,7 +88,7 @@
                                                     @enderror
                                                 </div>
                                                 
-                                                <div class="form-group col-md-6">
+                                                <div class="form-group col-lg-12 col-md-6">
                                                     <label>Confirmer le mot de passe</label>
                                                     <input id="confirm_password" name="confirm_password" type="password" class="form-control @error('confirm_password') is-invalid @enderror" value="{{ old('confirm_password') }}">
                                                     @error('confirm_password')

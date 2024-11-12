@@ -86,20 +86,34 @@ class PropertyController extends Controller
         return view('pages.listAgent');
     } 
  
-    public function singleAgent($user_id)
+    public function singleAgent()
     {
-        //$agents = User::where('agent_id', Auth::user()->id)->with('agent')->first();
-        //dd($agents);
-        /*$user = User::find($user_id);
-        dd($user);
-        $agent = $user->agent;
+        $user_id = Auth::user()->id;
+        $agent_id = Auth::user()->id;
 
-        if(!$agent)
-        {
+        $user = User::with('agent')->find($user_id);
+        //dd($user_id);
+
+        if (!$user) {
+            //return response()->json(['message' => 'Utilisateur non trouvé'], 404);
+            return redirect()->back()->with('error', 'Cet utilisateur n\'a pas été trouvé.');
+        }
+            //return response()->json($user);
+
+        $agent = Agent::with('users')->find($agent_id);
+        //dd($agent_id);
+
+        if (!$agent) {
+            //return response()->json(['message' => 'Agent non trouvé'], 404);
             return redirect()->back()->with('error', 'Cet utilisateur n\'a pas d\'agent associé.');
-        }*/
+        }
+            //return redirect()->back()->with('error', 'Cet utilisateur n\'a pas d\'agent associé.');
+        
 
-        return view('pages.singleAgent');
+        return view('pages.singleAgent', [
+            'user' => $user,
+            'agent' => $agent->users
+        ]);
             /*compact('user', 'agent')
         );*/
     } 

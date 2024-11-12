@@ -46,12 +46,12 @@
 										<div class="d-navigation">
 											<ul>
 												<!--<li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i>Dashboard</a></li>-->
-												<li><a href="{{ route('admin.doprofile') }}"><i class="fa-solid fa-address-card"></i>Mon Profil</a></li>
-												<li><a href="{{route('admin.bookmarked')}}"><i class="fa-solid fa-bookmark"></i>Liste des Favoris</a></li>
+												<li><a href="{{ route('admin.property.profile') }}"><i class="fa-solid fa-address-card"></i>Mon Profil</a></li>
+												<li><a href="{{route('admin.property.bookmarked')}}"><i class="fa-solid fa-bookmark"></i>Liste des Favoris</a></li>
 												<li><a href="{{ route('admin.property.index') }}"><i class="fa-solid fa-building-circle-check"></i>Mes Propriétés</a></li>
 												<li class="active"><a href="{{ route('admin.property.create') }}"><i class="fa-solid fa-house"></i>Ajouter un Bien</a></li>
                                                 <li><a href="{{route('admin.property.search')}}"><i class="fa-solid fa-gauge"></i>Rechercher un Bien</a></li>
-												<li><a href="{{route('admin.changePassword')}}"><i class="fa-solid fa-unlock"></i>Changer le Mot de Passe</a></li>
+												<li><a href="{{route('admin.property.changePassword')}}"><i class="fa-solid fa-unlock"></i>Changer le Mot de Passe</a></li>
 												<li><a href="{{ route('logout') }}"><i class="fa-solid fa-power-off"></i>Déconnexion</a></li>
 											</ul>
 										</div>

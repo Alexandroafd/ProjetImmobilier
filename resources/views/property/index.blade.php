@@ -155,11 +155,11 @@
                                                     <div class="listing-detail-wrapper d-flex align-items-center justify-content-between">
                                                         <div class="listing-short-detail">
                                                             @if ($property->status == "rent")
-                                                            <span class="label bg-light-success text-success prt-type me-2"> A Louer </span><span class="label bg-light-purple text-purple property-cats">{{$property->type}}</span>
-                                                        @else
-                                                            <span class="label bg-light-danger text-danger prt-type me-2"> A Vendre </span><span class="label bg-light-purple text-purple property-cats">{{$property->type}}</span>
-                                                        @endif
-                                                        <h4 class="listing-name mb-0"><a href="{{route('property.show', ['slug' => $property->getSlug(), 'property' => $property])}}">{{ Illuminate\Support\Str::limit($property->title, 25, '...') }}</a></h4>
+                                                                <span class="label bg-light-success text-success prt-type me-2"> A Louer </span><span class="label bg-light-purple text-purple property-cats">{{$property->type}}</span>
+                                                            @else
+                                                                <span class="label bg-light-danger text-danger prt-type me-2"> A Vendre </span><span class="label bg-light-purple text-purple property-cats">{{$property->type}}</span>
+                                                            @endif
+                                                            <h4 class="listing-name mb-0 mt-2"><a href="{{route('property.show', ['slug' => $property->getSlug(), 'property' => $property])}}">{{ Illuminate\Support\Str::limit($property->title, 25, '...') }}</a></h4>
                                                             <div class="fr-can-rating">
                                                                 <i class="fas fa-star fs-xs filled"></i>
                                                                 <i class="fas fa-star fs-xs filled"></i>

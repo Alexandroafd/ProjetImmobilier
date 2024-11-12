@@ -39,7 +39,7 @@
                                                 Aucune photo disponible
                                             @endif
 
-                                            <form method="POST" action="{{route('admin.updateProfile')}}" enctype="multipart/form-data">
+                                            <form method="POST" action="{{route('admin.property.updateProfile')}}" enctype="multipart/form-data">
                                                 @csrf
                                             
                                                 <div class="form-group">
@@ -58,12 +58,12 @@
 										
 										<div class="d-navigation">
 											<ul>
-												<li class="active"><a href="{{route('admin.profile')}}"><i class="fa-solid fa-address-card"></i>Mon Profil</a></li>
-												<li><a href="{{route('admin.bookmarked')}}"><i class="fa-solid fa-bookmark"></i>Liste des Favoris</a></li>
+												<li class="active"><a href="{{route('admin.property.profile')}}"><i class="fa-solid fa-address-card"></i>Mon Profil</a></li>
+												<li><a href="{{route('admin.property.bookmarked')}}"><i class="fa-solid fa-bookmark"></i>Liste des Favoris</a></li>
 												<li><a href="{{route('admin.property.index')}}"><i class="fa-solid fa-building-circle-check"></i>Mes Propriétés</a></li>
 												<li><a href="{{route('admin.property.create')}}"><i class="fa-solid fa-house"></i>Ajouter un Bien</a></li>
                                                 <li><a href="{{route('property.index')}}"><i class="fa-solid fa-gauge"></i>Rechercher un Bien</a></li>
-												<li><a href="{{route('admin.changePassword')}}"><i class="fa-solid fa-unlock"></i>Changer le Mot de passe</a></li>
+												<li><a href="{{route('admin.property.changePassword')}}"><i class="fa-solid fa-unlock"></i>Changer le Mot de passe</a></li>
 												<li><a href="{{route('logout')}}"><i class="fa-solid fa-power-off"></i>Déconnexion</a></li>
 											</ul>
 										</div>
@@ -80,7 +80,7 @@
 								<div class="form-submit">	
 									<h4>Mon Compte</h4>
 									<div class="submit-section">
-                                        <form method="post" action="{{route('admin.doprofile')}}">
+                                        <form method="post" action="{{route('admin.property.doprofile')}}">
                                             @csrf
                                             <div class="row">
                                                 <div class="form-group col-md-6">

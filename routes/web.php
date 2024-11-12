@@ -32,7 +32,7 @@ Route::post('/biens/{property}/contact',[\App\Http\Controllers\PropertyControlle
 ]);
 
 Route::get('/listAgent', [\App\Http\Controllers\PropertyController::class, 'listAgent'])->name('listAgent'); 
-Route::get('/singleAgent/{user_id}', [\App\Http\Controllers\PropertyController::class, 'singleAgent'])->name('singleAgent'); 
+Route::get('/singleAgent', [\App\Http\Controllers\PropertyController::class, 'singleAgent'])->name('singleAgent'); 
 Route::get('/listAgency', [\App\Http\Controllers\PropertyController::class, 'listAgency'])->name('listAgency'); 
 Route::get('/singleAgency', [\App\Http\Controllers\PropertyController::class, 'singleAgency'])->name('SingleAgency');
 
@@ -54,12 +54,12 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::resource('/property', PropertyController::class)->except(['show']);
     Route::resource('/option', OptionController::class)->except(['show']);
     Route::get('/bien',[\App\Http\Controllers\PropertyController::class, 'search'])->name('property.search');
-    Route::get('/myprofile', [PropertyController::class, 'profile'])->name('profile');
-    Route::post('myprofile', [PropertyController::class, 'doprofile'])->name('doprofile');
-    Route::post('updateProfile', [PropertyController::class, 'updateProfile'])->name('updateProfile');
-    Route::get('/changePassword', [PropertyController::class, 'changePassword'])->name('changePassword');
-    Route::post('updatePassword', [PropertyController::class, 'updatePassword'])->name('updatePassword');
-    Route::get('/bookmarked', [PropertyController::class, 'bookmarked'])->name('bookmarked');
+    Route::get('/myprofile', [PropertyController::class, 'profile'])->name('property.profile');
+    Route::post('myprofile', [PropertyController::class, 'doprofile'])->name('property.doprofile');
+    Route::post('updateProfile', [PropertyController::class, 'updateProfile'])->name('property.updateProfile');
+    Route::get('/changePassword', [PropertyController::class, 'changePassword'])->name('property.changePassword');
+    Route::post('updatePassword', [PropertyController::class, 'updatePassword'])->name('property.updatePassword');
+    Route::get('/bookmarked', [PropertyController::class, 'bookmarked'])->name('property.bookmarked');
     Route::post('/property/{property}/favori', [PropertyController::class, 'addToFavorites'])->name('property.favori');
     Route::delete('/favori/{favori}', [PropertyController::class, 'delete'])->name('delete.favori');
     
